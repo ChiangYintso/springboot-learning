@@ -8,7 +8,6 @@ import org.jetbrains.annotations.NotNull;
 public class AjaxResponse {
     private int errCode;
     private String errMsg;
-    private int statusCode;
     private Object data = null;
 
     @Contract(pure = true)
@@ -19,7 +18,6 @@ public class AjaxResponse {
         AjaxResponse ajaxResponse = new AjaxResponse();
         ajaxResponse.setErrCode(0);
         ajaxResponse.setErrMsg("ok");
-        ajaxResponse.setStatusCode(200);
         ajaxResponse.setData(data);
 
         return ajaxResponse;
@@ -30,7 +28,6 @@ public class AjaxResponse {
         AjaxResponse ajaxResponse = new AjaxResponse();
         ajaxResponse.setErrCode(0);
         ajaxResponse.setErrMsg("ok");
-        ajaxResponse.setStatusCode(200);
 
         return ajaxResponse;
     }

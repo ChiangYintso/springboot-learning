@@ -1,6 +1,7 @@
 package pers.jyz.bootlaunch2.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.web.bind.annotation.*;
 import pers.jyz.bootlaunch2.model.Article;
 import pers.jyz.bootlaunch2.utils.AjaxResponse;
@@ -39,9 +40,10 @@ public class ArticleRestController {
     }
 
     @PutMapping(value = "/articles/{id}", produces = "application/json")
-    public AjaxResponse updateArticleById(@PathVariable Long id) {
+    public AjaxResponse updateArticleById(@PathVariable Long id, @NotNull @RequestBody Article article) {
+        article.setId(id);
         log.info("update article: {}", id);
-
+        log.info("update article: {}", article);
         return AjaxResponse.success();
     }
 }
